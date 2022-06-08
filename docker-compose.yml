@@ -1,0 +1,23 @@
+version: "3.0"
+
+services:
+  web:
+    build:
+      context: ./
+      dockerfile: ./docker/web/Dockerfile
+    volumes:
+      - ./srcs:/usr/src/app
+    ports:
+      - "8080:8080"
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: my_database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/db/data:/var/lib/mysql
