@@ -45,3 +45,9 @@ https://nextjs.org/docs/messages/failed-loading-swc
 以下の方法で、RUST製コンパイラを使用しないように変更したことで解決した。
 
 https://stackoverflow.com/questions/69816589/next-failed-to-load-swc-binary/69820670#69820670
+
+# Next.js に tailwind CSS を導入する
+
+以下の公式ドキュメント通りに実行と Dockerfile に追記する
+
+https://tailwindcss.com/docs/guides/nextjs
