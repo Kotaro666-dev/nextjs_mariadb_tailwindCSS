@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 
-const Home: NextPage = () => {
+const Category_2: NextPage = () => {
   return (
     <h1 className="text-3xl font-bold underline">
-     HOME
+      Category_2 Page
     </h1>
   )
 }
 
-export default Home
+export default Category_2
