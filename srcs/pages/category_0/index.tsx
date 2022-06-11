@@ -12,9 +12,13 @@ const Category_0: NextPage = () => {
   }
 
   return (
-    <div >
-      <FilledButton title='詳細画面' onClick={handleOnClick}/>
-    </div>
+    <>
+      <h1 className='text-4xl'>カテゴリー0</h1>
+      <div className='flex justify-end'>
+        <FilledButton title='詳細画面' onClick={handleOnClick}/>
+      </div>
+
+    </>
   )
 }
 

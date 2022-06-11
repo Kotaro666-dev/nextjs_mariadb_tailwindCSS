@@ -3,28 +3,28 @@ import { FilledButton, WhiteButton } from '../../components'
 import { useRouter } from 'next/router'
 
 
-const Details: NextPage = () => {
+const Edit: NextPage = () => {
     const router = useRouter()
 
-    const handleEditButtonOnClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+    const handleSaveButtonOnClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
         e.preventDefault()
-        router.push('./edit')
+        router.back()
     }
 
     const handleBackButtonOnClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
         e.preventDefault()
-        router.replace('./')
+        router.replace('./details')
     }
 
   return (
     <>
-     <h1 className='text-4xl'>詳細</h1>
+     <h1 className='text-4xl'>編集</h1>
         <div className='flex justify-end'>
             <WhiteButton title='戻る' onClick={handleBackButtonOnClick}/>
-            <FilledButton title='編集' onClick={handleEditButtonOnClick}/>
+            <FilledButton title='登録' onClick={handleSaveButtonOnClick}/>
         </div>
     </>
   )
 }
 
-export default Details
+export default Edit
