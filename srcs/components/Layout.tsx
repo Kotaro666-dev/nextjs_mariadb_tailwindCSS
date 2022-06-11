@@ -8,7 +8,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = (props) => {
             <Header/>
             <div className="flex-auto flex">
                 <SideBar/>
-                <main>{props.children}</main>
+                <main className="grow mx-[50px] mt-10">{props.children}</main>
             </div>
         </div>
     )
