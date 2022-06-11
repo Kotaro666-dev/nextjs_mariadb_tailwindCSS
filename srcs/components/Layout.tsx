@@ -4,10 +4,12 @@ import SideBar from "./SideBar"
 
 const Layout: React.FC<{ children: React.ReactNode }> = (props) => {
     return(
-        <div>
+        <div className="flex flex-col h-screen">
             <Header/>
-            <SideBar/>
-            <main>{props.children}</main>
+            <div className="flex-auto flex">
+                <SideBar/>
+                <main>{props.children}</main>
+            </div>
         </div>
     )
 }

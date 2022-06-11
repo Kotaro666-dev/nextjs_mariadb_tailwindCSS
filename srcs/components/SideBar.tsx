@@ -22,8 +22,8 @@ const items: Category[] = [
 
 const SideBar = () => {
   return (
-    <div className="hidden md:flex md:w-64 md:fixed">
-      <div className="flex-1 h-screen flex flex-col min-h-0 bg-indigo-700">
+    <div className="md:flex md:w-64">
+      <div className="flex-1 flex flex-col min-h-0 bg-indigo-700">
           <nav className="mt-5 flex-1 px-2 space-y-5">
             {items.map((item) => (
               <a
@@ -37,7 +37,7 @@ const SideBar = () => {
             ))}
           </nav>
       </div>
-    </div>
+   </div>
   )
 }
 
