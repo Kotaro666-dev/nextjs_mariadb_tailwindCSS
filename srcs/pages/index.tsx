@@ -1,14 +1,19 @@
-import type { NextPage } from 'next'
-import Category_0 from './category_0'
-import Header from '../components/Header'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react';
 
-const Home: NextPage = () => {
-  return (
-    <>
-      <Category_0/>
-    </>
-  )
+const Home = () => {
+  const router = useRouter()
 
+  // ホームディレクトリへのリクエスト時に、カテゴリー0画面へ遷移させる
+  useEffect(() => {
+    const path = router.basePath
+    console.log(path)
+    if (path == '') {
+      router.replace('/category_0')
+    }
+  }, []);
+
+  return
 }
 
 export default Home
