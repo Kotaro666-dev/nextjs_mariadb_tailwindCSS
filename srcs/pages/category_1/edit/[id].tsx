@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { FilledButton, WhiteButton } from '../../components'
+import { FilledButton, WhiteButton } from '../../../components'
 import { useRouter } from 'next/router'
 
 
