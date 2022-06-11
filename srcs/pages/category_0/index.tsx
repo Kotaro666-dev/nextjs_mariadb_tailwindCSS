@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
-import { SideBar } from '../../components'
+import { SideBar, Content } from '../../components'
 
 const Category_0: NextPage = () => {
   return (
     <>
-      <SideBar/>
+      {/* <SideBar/> */}
+      <Content title='タイトル1' body={<div>これは本文です</div>}/>
     </>
   )
 }

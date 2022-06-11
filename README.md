@@ -51,3 +51,50 @@ https://stackoverflow.com/questions/69816589/next-failed-to-load-swc-binary/6982
 以下の公式ドキュメント通りに実行と Dockerfile に追記する
 
 https://tailwindcss.com/docs/guides/nextjs
+
+## コンポーネントの引数として子コンポーネントを渡す方法
+
+Typescript で型定義する際にはコンポーネントの型を `React.ReactNode` にする。
+
+参考資料: https://linguinecode.com/post/pass-react-component-as-prop-with-typescript
+
+```
+const Category_0: NextPage = () => {
+  return (
+    <>
+      <Child title='タイトル1' body={<GrandChild />}/>
+    </>
+  )
+}
+
+type childProps = {
+  title: string,
+  body: React.ReactNode
+}
+
+const Child: React.FC<childProps> = (props: childProps) => {
+  return (
+    <>
+      <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div className="md:flex flex-col">
+          <div className='bg-orange-400'>
+            <p className="block mt-1 text-lg leading-tight font-medium text-black py-2 pl-4">{props.title}</p>
+          </div>
+          <div>{props.body}</div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+const GrandChild : React.FC  = () => {
+  return (
+    <div className='py-5 pl-4'>
+      <p>これは本文です</p>
+    </div>
+
+  )
+}
+```
+
+https://linguinecode.com/post/pass-react-component-as-prop-with-typescript
