@@ -13,7 +13,7 @@ const Edit: NextPage = () => {
 
     const handleBackButtonOnClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
         e.preventDefault()
-        router.replace('./details')
+        router.back()
     }
 
   return (

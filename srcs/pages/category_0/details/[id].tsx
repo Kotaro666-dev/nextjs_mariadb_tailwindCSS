@@ -7,7 +7,7 @@ const Details: NextPage = () => {
     const query = router.query
 
     const handleEditButtonOnClick = () => {
-        router.push('./edit')
+        router.push('../edit')
     }
 
     const handleBackButtonOnClick = () => {
