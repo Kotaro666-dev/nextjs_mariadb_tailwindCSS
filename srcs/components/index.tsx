@@ -6,7 +6,7 @@ export { default as Header } from './Header'
 export { default as SideBar } from './SideBar'
 export { default as Content } from './Content'
 export { default as DataEmptyBanner } from './DataEmptyBanner'
-
+export { default as ListCard } from './ListCard'
 
 
 export { default as FilledButton} from './FilledButton'
