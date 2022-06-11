@@ -23,13 +23,8 @@ const items: Card[] = [
 
 
 const Category_0: NextPage = () => {
-  const router = useRouter()
   const [isData, setIsData] = useState<boolean>(true);
 
-  const handleOnClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
-      e.preventDefault()
-      router.push('./category_0/details')
-  }
 
   const Body = () => {
     if (!isData) {
@@ -50,9 +45,6 @@ const Category_0: NextPage = () => {
   return (
     <>
       <h1 className='text-4xl'>カテゴリー0</h1>
-      <div className='flex justify-end'>
-        <FilledButton title='詳細画面' onClick={handleOnClick}/>
-      </div>
       {Body()}
     </>
   )
