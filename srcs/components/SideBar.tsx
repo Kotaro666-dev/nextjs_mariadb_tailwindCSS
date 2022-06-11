@@ -13,7 +13,7 @@ interface Category {
 }
 
 const items: Category[] = [
-  { name: 'カテゴリー0', href: '/', icon: HomeIcon, },
+  { name: 'カテゴリー0', href: '/category_0', icon: HomeIcon, },
   { name: 'カテゴリー1', href: '/category_1', icon: UsersIcon },
   { name: 'カテゴリー2', href: '/category_2', icon: FolderIcon },
   { name: 'カテゴリー3', href: '/category_3', icon: CalendarIcon },
