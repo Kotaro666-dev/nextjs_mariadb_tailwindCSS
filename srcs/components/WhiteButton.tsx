@@ -1,4 +1,4 @@
-const WhiteButton: React.FC<{ title: string, onClick: () => void}> = (props) => {
+const WhiteButton: React.FC<{ title: string, onClick: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void}> = (props) => {
     return (
         <>
             <button
