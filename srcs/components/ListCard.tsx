@@ -8,7 +8,7 @@ const ListCard: React.FC<{ items: Card[] }> = (props) => {
     const handleItemOnClick = (card: Card) => {
         router.push({
             pathname: `${basePath}/details/[id]`,
-            query: { id: card.id, title: card.title},
+            query: { id: card.id },
         })
       }
 
