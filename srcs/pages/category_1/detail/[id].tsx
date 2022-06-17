@@ -8,7 +8,7 @@ const Details: NextPage = () => {
     const handleEditButtonOnClick = () => {
         const id = router.query.id
         router.push({
-          pathname: `/category_1/details/${id}/edit`,
+          pathname: `/category_1/detail/${id}/edit`,
         })
     }
 

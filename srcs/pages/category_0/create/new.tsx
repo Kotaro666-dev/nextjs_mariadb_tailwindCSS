@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { FilledButton, WhiteButton } from '../../../../components'
+import { FilledButton, WhiteButton } from '../../../components'
 import { useRouter } from 'next/router'
 
 const Create: NextPage = () => {
@@ -7,7 +7,7 @@ const Create: NextPage = () => {
 
     const handleCreateButtonOnClick = () => {
         router.push({
-          pathname: `/category_2/`
+          pathname: `/category_0`
         })
     }
 

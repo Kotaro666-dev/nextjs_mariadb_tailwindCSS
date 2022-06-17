@@ -1,18 +1,16 @@
 import type { NextPage } from 'next'
-import { FilledButton, WhiteButton } from '../../components'
+import { FilledButton, WhiteButton } from '../../../../components'
 import { useRouter } from 'next/router'
 
 
 const Edit: NextPage = () => {
     const router = useRouter()
 
-    const handleSaveButtonOnClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
-        e.preventDefault()
+    const handleSaveButtonOnClick = () => {
         router.back()
     }
 
-    const handleBackButtonOnClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
-        e.preventDefault()
+    const handleBackButtonOnClick = () => {
         router.back()
     }
 

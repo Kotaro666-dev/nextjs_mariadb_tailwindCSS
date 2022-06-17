@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import type { NextPage } from 'next'
 import { DataEmptyBanner, FilledButton, ListCard } from '../../components'
-import { useRouter } from 'next/router'
 import { Card } from '../category_0'
 
 const items: Card[] = [

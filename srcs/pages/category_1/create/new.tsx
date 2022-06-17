@@ -2,11 +2,11 @@ import type { NextPage } from 'next'
 import { FilledButton, WhiteButton } from '../../../components'
 import { useRouter } from 'next/router'
 
-const Details: NextPage = () => {
+const Create: NextPage = () => {
     const router = useRouter()
 
-    const handleEditButtonOnClick = () => {
-        router.push('../edit')
+    const handleCreateButtonOnClick = () => {
+        router.back()
     }
 
     const handleBackButtonOnClick = () => {
@@ -15,13 +15,13 @@ const Details: NextPage = () => {
 
   return (
     <>
-     <h1 className='text-4xl'>詳細 - タイトル</h1>
+     <h1 className='text-4xl'>新規作成 - タイトル</h1>
         <div className='flex justify-end'>
             <WhiteButton title='戻る' onClick={handleBackButtonOnClick}/>
-            <FilledButton title='編集' onClick={handleEditButtonOnClick}/>
+            <FilledButton title='編集' onClick={handleCreateButtonOnClick}/>
         </div>
     </>
   )
 }
 
-export default Details
+export default Create
