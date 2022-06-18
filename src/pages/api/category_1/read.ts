@@ -1,14 +1,17 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
+import prisma from "../../../lib/index"
 
-type Data = {
-    id: number,
-  title: string
-}
 
-export default function readHandler(
+export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse
 ) {
-  res.status(200).json({ id: 0, title : 'テスト0' });
+  try {
+    const category_1 = await prisma.category_1.findMany();
+    res.status(200).json(category_1);
+  } catch (error) {
+    console.log(error)
+    res.status(500).json(error)
+  }
 }
