@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import prisma from "../../lib/index"
 import { ApiResponse, Category_1_Data } from '../../types/types'
 
-type Response = ApiResponse<Category_1_Data[]>
+type Response = ApiResponse<Category_1_Data[] | Category_1_Data>
 
 const errorResponse: Response = {
   status: "ERROR", code: 500,
@@ -34,7 +34,7 @@ export default function handler(
   }
 }
 
-async function handleGetRequest(res: NextApiResponse<Response>) {
+async function handleGetRequest( res: NextApiResponse<Response>) {
   try {
     const result = await prisma.category_1.findMany();
     res.status(200).json({status: "SUCCESS", data: result });
