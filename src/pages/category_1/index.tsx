@@ -1,27 +1,34 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { NextPage } from 'next'
 import { DataEmptyBanner, FilledButton, ListCard } from '../../components'
 import { Card } from '../category_0'
-
-const items: Card[] = [
-  { id: 0, title: 'テスト0' },
-  { id: 1, title: 'テスト1' },
-  { id: 2, title: 'テスト2' },
-  { id: 3, title: 'テスト3' },
-  { id: 4, title: 'テスト4' },
-  { id: 5, title: 'テスト5' },
-  { id: 6, title: 'テスト6' },
-  { id: 7, title: 'テスト7' },
-  { id: 8, title: 'テスト8' },
-  { id: 9, title: 'テスト9' },
-]
-
+import axios from "axios";
 
 const Category_1: NextPage = () => {
-  const [isData, setIsData] = useState<boolean>(true);
+  const [isInitialized, setIsInitialized] = useState<boolean>(false);
+  const [isData, setIsData] = useState<boolean>(false);
+  const [card, setCard] = useState<Card[]>([]);
+
+  const getCard = async () => {
+    const response = await axios.get("api/category_1");
+    if (response.status !== 200) {
+      setIsInitialized(true);
+      return;
+    }
+    const data = response.data.data;
+    setCard(data);
+    setIsData(true);
+    setIsInitialized(true);
+  }
+
+  useEffect(() => {
+    getCard();
+  }, []);
 
   const Body = () => {
-    if (!isData) {
+    if (!isInitialized) {
+      return <div></div>;
+    } else if (!isData) {
       return (
         <div className='mt-10'>
           <DataEmptyBanner title='カテゴリー1' />
@@ -30,7 +37,7 @@ const Category_1: NextPage = () => {
     } else {
       return (
         <div  className='mt-10'>
-          <ListCard items={items}/>
+          <ListCard items={card}/>
         </div>
       )
     }
